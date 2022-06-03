@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "823478230489",
+    "project_id": "covidcare-486f7",
+    "storage_bucket": "covidcare-486f7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:823478230489:android:b48ba215ad4dbcd3088dc8",
+        "android_client_info": {
+          "package_name": "com.example.flutter_app1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "823478230489-fk0atnhje2r8goeqgds4fsdhq953bdal.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flutter_app1",
+            "certificate_hash": "ec596fdaf6c324eb9a7f97a75db1b35f624cc333"
+          }
+        },
+        {
+          "client_id": "823478230489-gqpqq4mrq1mm3ive7hnaeoqfvg3risd0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7mEweIH1-dzW9tWaonL66crLIiurukRU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "823478230489-gqpqq4mrq1mm3ive7hnaeoqfvg3risd0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
