@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app1/pre1.dart';
 import 'package:flutter_app1/test3.dart';
+import 'package:flutter_app1/xray.dart';
 
 
 class pre22 extends StatelessWidget {
@@ -96,7 +97,7 @@ class pre22 extends StatelessWidget {
                     onPressed: (){
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => pre22(),
+                        MaterialPageRoute(builder: (context) => XrayPage(),
                         ),
                       );
                     } ,
