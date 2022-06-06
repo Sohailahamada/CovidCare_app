@@ -1,20 +1,53 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:path/path.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 class XrayPage extends StatefulWidget {
   const XrayPage({Key? key}) : super(key: key);
   @override
   _XrayPageState createState() => _XrayPageState();
 }
 class _XrayPageState extends State<XrayPage> {
-  final ImagePicker _picker = ImagePicker();
+  late File file;
+  var imagepicker = ImagePicker();
+  uploadimage () async
+  {
+    var imgpicked = await imagepicker.getImage(source: ImageSource.gallery);
+    if (imgpicked!=null)
+      {
+        file = File (imgpicked.path);
+        var nameimage = basename(imgpicked.path);
+        //start upload
+        var refstorge = FirebaseStorage.instance.ref("images/$nameimage");
+        await refstorge.putFile(file);
+        var url = refstorge.getDownloadURL();
+        print(" url : $url");
+        //end upload
+        print("----------------------");
+        print(imgpicked.path);
+      }else{
+      print("please choose image");
+
+    }
+
+  }
   File? imagePath;
   Future<void> takeImageFromGallery() async {
     final ImagePicker _picker = ImagePicker();
     // Pick an image
     final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
-    setState(() {
+    setState(() async {
       imagePath = File(image!.path);
+      var nameimage = basename(image.path);
+
+      //start upload
+      var refstorge = FirebaseStorage.instance.ref('images/$nameimage');
+      await refstorge.putFile(imagePath!);
+      var url = refstorge.getDownloadURL();
+      print("url : $url");
+
+      //end upload
     });
   }
   Future<void> takeImageByCamera() async {
@@ -42,8 +75,9 @@ class _XrayPageState extends State<XrayPage> {
                 ),
               ),
               InkWell(
-                onTap: () {
-                  takeImageFromGallery();
+                onTap: ()  async {
+                 // takeImageFromGallery();
+                  await uploadimage();
                 },
                 child: Row(
                   mainAxisSize:MainAxisSize.min ,
