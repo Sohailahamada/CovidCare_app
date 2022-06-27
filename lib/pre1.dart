@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app1/pre22.dart';
 import 'package:flutter_app1/test3.dart';
-
-
 class pre1 extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,7 +11,6 @@ class pre1 extends StatelessWidget {
           SizedBox(
             height: 30,
           ),
-
           Row(
             children: [
               IconButton(
@@ -24,15 +20,12 @@ class pre1 extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => test3(),
-                    ),
-                  );
-                },
-              ),
+                    ),);
+                },),
               Container(
                 height: 100,
                 width: 150,
               ),
-
               Container(
                 //alignment: Alignment(0.003, 0.501),
                 height: 100,
@@ -44,8 +37,7 @@ class pre1 extends StatelessWidget {
                   ),
                 ),
               ),
-            ],
-          ),
+            ],),
           SizedBox(
             height: 30,
           ),

@@ -1,35 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app1/pre1.dart';
-import 'package:flutter_app1/test3.dart';
 import 'package:flutter_app1/xray.dart';
-
-
 class pre22 extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body:
-        Column(
+    return Scaffold(body: Column(
           children: [
             SizedBox(
           height: 30,
         ),
             Row(
         children: [
-          IconButton(
+              IconButton(
             icon: Image.asset('assets/images/pre.png'),
             iconSize: 50,
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => pre1(),
-                ),
-              );
+                ),);
             },
-          ),
-          ],
-        ),
+          ),],),
             SizedBox(
               height: 30,
             ),
@@ -58,8 +49,7 @@ class pre22 extends StatelessWidget {
 
                       ),
                     ),
-              ),
-            ),
+              ),),
             SizedBox(
               height: 30,
             ),

@@ -1,29 +1,16 @@
-
 import 'package:flutter/material.dart';
 class homep extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
+      body: Column(children: [
           SizedBox(
             height: 50,
           ),
-          /*Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Image.asset(
-                'assets/images/logo_login.png',
-                width: 100,
-                height: 150,
-              ),
-            ],
-          ),*/
           Padding(
             padding: const EdgeInsets.only(left: 30.0,right:30.0 ),
             child: Material(
-              elevation: 3.0,
-              shadowColor: Colors.grey,
+              elevation: 3.0, shadowColor: Colors.grey,
               borderRadius:BorderRadius.circular(25.0) ,
               child: TextFormField(
                 keyboardType: TextInputType.text,
@@ -39,12 +26,8 @@ class homep extends StatelessWidget {
                       width: 10,
                       height: 10,
                       fit: BoxFit.fill,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
+                    ),),
+                ),),),),
           SizedBox(
             height: 10,
           ),
@@ -113,8 +96,7 @@ class homep extends StatelessWidget {
               ),
             ),
           ),
-          Expanded(
-            child: Padding(
+          Expanded(child: Padding(
               padding: const EdgeInsets.all(12.0),
               child: Stack(
                 children: [

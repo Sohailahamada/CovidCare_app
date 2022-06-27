@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app1/login.dart';
-import 'package:flutter_app1/signup22.dart';
-
+import 'package:flutter_app1/sign.dart';
 class  welcome extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,20 +12,16 @@ class  welcome extends StatelessWidget {
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: const AssetImage('assets/images/logo_login.png'),
-                fit: BoxFit.fill,
-              ),
+                fit: BoxFit.fill,),
               borderRadius: BorderRadius.circular(95.0),
-            ),
-          ),
+            ),),
           Container(
             height: 200,
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: const AssetImage('assets/images/welcome.png'),
                 fit: BoxFit.contain,
-              ),
-            ),
-          ),
+              ),),),
           Container(
             height: 100,
             child: Text(
@@ -70,7 +64,7 @@ class  welcome extends StatelessWidget {
               onPressed: (){
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => signup22(),
+                  MaterialPageRoute(builder: (context) => sign(),
                   ),
                 );
               } ,

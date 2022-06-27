@@ -1,42 +1,29 @@
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app1/signup11.dart';
 import 'package:flutter_app1/signup22.dart';
-
 import 'homepage.dart';
-import 'login.dart';
 class login extends StatelessWidget {
   var emailController =TextEditingController();
   var passwordController =TextEditingController();
   var formKey = GlobalKey<FormState>();
-
-
-
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: SingleChildScrollView(
-          child: Form(
-            key: formKey ,
+  Widget build(BuildContext context) {return Scaffold(
+      body: Center(child: SingleChildScrollView(
+          child: Form(key: formKey ,
             child: Padding(
               padding: const EdgeInsets.all(20.0),
               child: Column(
                 crossAxisAlignment:CrossAxisAlignment.start,
                 children : [
-                  Container(
-                    height: 200,
+                  Container(height: 200,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: const AssetImage('assets/images/logo_login.png'),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(95.0),
-                    ),
-                  ),
-
+                    ),),
                   TextFormField(
                     controller: emailController,
                     keyboardType: TextInputType.emailAddress,
@@ -45,8 +32,7 @@ class login extends StatelessWidget {
                       labelText: 'Email Address',
                       border: OutlineInputBorder(),
                       prefixIcon:Icon(Icons.email,),),
-                    validator: (value)
-                    {
+                    validator: (value) {
                       if ( value!.isEmpty)
                       {
                         return 'email address must not be empty';
@@ -74,13 +60,12 @@ class login extends StatelessWidget {
                       return null ;
                     },
                   ),
-
                   SizedBox(height:30.0),
                   Center(
                     child: Container(
                       alignment: Alignment(0.504, -0.6) ,
                       width: 150.0,
-                      height: 35.0,
+                      height: 50.0,
                       child: MaterialButton(
                         shape: const StadiumBorder(),
                         minWidth: 230,
@@ -133,8 +118,6 @@ class login extends StatelessWidget {
 
                     ],
                   ),
-
-
                 ],
               ),
             ),

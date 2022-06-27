@@ -4,42 +4,29 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app1/form.dart';
-import 'package:flutter_app1/signup22.dart';
-import 'package:flutter_app1/signup22.dart';
-import 'package:flutter_app1/welcome.dart';
-
 class signup11 extends StatefulWidget {
-
   @override
-  State<signup11> createState() => _signup11State();
-
-}
-
+  State<signup11> createState() => _signup11State();}
 class _signup11State extends State<signup11> {
   final isSelected = <bool>[true, false];
   final emailController =TextEditingController();
   final passwordController =TextEditingController();
   final nameController =TextEditingController();
-  final birthdayController =TextEditingController();
+  final ageController =TextEditingController();
   final phoneController =TextEditingController();
   final nationalIDController =TextEditingController();
   final genderController =TextEditingController();
-
   final Stream<QuerySnapshot> users = FirebaseFirestore.instance.collection('users').snapshots();
   @override
   Widget build(BuildContext context) {
-    CollectionReference users =FirebaseFirestore.instance.collection('users');
-    return Scaffold(
-      /*appBar: AppBar (
-        backgroundColor: Colors.white,
-      ),*/
-      body:
+   CollectionReference users =FirebaseFirestore.instance.collection('users');
+    return Scaffold( body:
       Padding(
         padding: const EdgeInsets.all(8.0),
         child: Center(
           child: Column(
               children: [
-                SizedBox(height: 20,),
+                SizedBox(height: 30,),
                 Container(
                   height: 150,
                   decoration: BoxDecoration(
@@ -51,63 +38,15 @@ class _signup11State extends State<signup11> {
                     borderRadius: BorderRadius.circular(95.0),
                   ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    ToggleButtons(
-                      color: Colors.black.withOpacity(0.60),
-                      selectedColor: Colors.white,
-                      selectedBorderColor: Color(0xFF6200EE),
-                      fillColor: const Color(0xff3b74b9),
-                      splashColor: Color(0xFF6200EE).withOpacity(0.12),
-                      hoverColor: Color(0xFF6200EE).withOpacity(0.04),
-                      borderRadius: BorderRadius.circular(20.0),
-                      constraints: BoxConstraints(minHeight: 45.0, minWidth: 120.0),
-                      isSelected: isSelected,
-                      onPressed: (index) {
-                        // Respond to button selection
-                        setState(() {
-                          //isSelected[index] = !isSelected[index];
-                          for (int i = 0; i < isSelected.length; i++) {
-                            isSelected[i] = i == index;
-                          }
-                        });
-                      },
-                      children: [
-
-                        Text('User Sign Up',
-                          style: TextStyle(
-                            fontFamily: 'Comic Sans MS',
-                            fontWeight: FontWeight.w700,
-
-                          ),
-                        ),
-
-                        Text('Dr Sign Up',
-                          style: TextStyle(
-                            fontFamily: 'Comic Sans MS',
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-
-
-                      ],
-                    ),
-                  ],
-                ),
                 Expanded(
                   child :
                   TextFormField(
                     controller: emailController,
                     keyboardType: TextInputType.emailAddress,
                     onFieldSubmitted: (value){
-                      print(value);
-                      },
+                      print(value);},
                     onChanged: (value){
-
-                      print(value);
-
-                    },
+                      print(value);},
                     validator: (val){
                       if (val!.length >100){
                         return " Email Can't to be longer than 100 letter  ";
@@ -115,17 +54,13 @@ class _signup11State extends State<signup11> {
                       if (val.length < 100){
                         return " Email Can't to be less than 100 letter  ";
                       }
-                      return null;
-                    },
-
-
+                      return null;},
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       hintText: ' Email',
                       contentPadding: EdgeInsets.symmetric(horizontal: 15),
                     ),
-                  ),
-                ),
+                  ),),
                 Divider(height: 1,),
                 Expanded(
                   child: TextFormField(
@@ -189,7 +124,7 @@ class _signup11State extends State<signup11> {
                 Divider(height: 1,),
                 Expanded(
                   child: TextFormField(
-                    controller: birthdayController,
+                    controller: ageController,
                     keyboardType: TextInputType.datetime,
                     onFieldSubmitted: (value){
                       print(value);
@@ -202,7 +137,7 @@ class _signup11State extends State<signup11> {
 
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                      hintText: 'Your birthday',
+                      hintText: 'Age',
                       contentPadding: EdgeInsets.symmetric(horizontal: 15),
                       suffixIcon: Icon(
                           Icons.calendar_view_month_rounded
@@ -285,7 +220,6 @@ class _signup11State extends State<signup11> {
                       color: const Color(0xff3b74b9),
                       height: 45.0,
                       onPressed: () async {
-
                         try {
                           final credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
                             email: emailController.text,
@@ -301,22 +235,11 @@ class _signup11State extends State<signup11> {
                         } catch (e) {
                           print(e);
                         }
-                        /* final user = User(
-                           email :emailController.text,
-                           name : nameController.text,
-                           password :passwordController.text,
-                           birthday :birthdayController.text,
-                           phone : phoneController.text,
-                           NationalID :nationalIDController.text,
-                           gender :genderController.text,
-
-                         );*/
-                        //createUser(user);
-                       /*Navigator.push(
+                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => signup11(),
+                          MaterialPageRoute(builder: (context) => form(),
                           ),
-                        );*/
+                        );
                         users.add({'name':nameController}).then((value) => print('User Added')).catchError((error) => print('Faild to add user:$error'));
 
                       } ,

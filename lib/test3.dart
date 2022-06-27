@@ -2,12 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import './homepage.dart';
 import 'package:adobe_xd/page_link.dart';
-import './chat.dart';
-import './profile.dart';
 import './test2.dart';
-import './test2.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
 class test3 extends StatelessWidget {
   double v=0;
   double v1=0;
@@ -18,8 +13,7 @@ class test3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffffffff),
-      body: Stack(
-        children: <Widget>[
+      body: Stack(children: <Widget>[
           Pinned.fromPins(
             Pin(size: 53.0, start: 10.0),
             Pin(size: 53.0, start: 29.0),
@@ -55,7 +49,6 @@ class test3 extends StatelessWidget {
 
             ),
           ),
-
           Align(
             alignment: Alignment(0.008, -0.646),
             child: SizedBox(
@@ -95,7 +88,6 @@ class test3 extends StatelessWidget {
               softWrap: false,
             ),
           ),
-
           Pinned.fromPins(
               Pin(size: 210.0, start: 10.0),
               Pin(size: 25.0, middle: 0.293),
@@ -174,7 +166,6 @@ class test3 extends StatelessWidget {
               softWrap: false,
             ),
           ),
-
           Pinned.fromPins(
             Pin(size: 100.0, end: 14.0),
             Pin(size: 35.0, middle: 0.281),
@@ -278,7 +269,6 @@ class test3 extends StatelessWidget {
               ),
             ),
           ),
-
           Align(
             alignment: Alignment(0.004, 0.442),
             child: Container(

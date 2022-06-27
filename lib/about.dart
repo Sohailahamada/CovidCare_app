@@ -1,20 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app1/Start.dart';
 import 'package:flutter_app1/welcome.dart';
-
 class about extends StatelessWidget {
   const about({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
           SizedBox(height: 100,),
-          Column(
-            children: [
-              Stack(
+          Column(children: [Stack(
                 children:[
                   Container(
                     height: 250,
@@ -33,7 +28,6 @@ class about extends StatelessWidget {
                         ),
                       ],
                     ),
-
                   ),
                   Positioned(
                     bottom: 0,
@@ -48,10 +42,7 @@ class about extends StatelessWidget {
                       softWrap: false,
                     ),
                   )
-                ],
-              ),
-            ],
-          ),
+                ],),],),
           Stack(
             children: [
               Container(
@@ -82,20 +73,15 @@ class about extends StatelessWidget {
                   softWrap: false,
                 ),
               )
-
-            ],
-          ),
+            ],),
           SizedBox(height: 40,),
           MaterialButton(
-            height: 50,
-            color:const Color(0xff3b74b9) ,
+            height: 50, color:const Color(0xff3b74b9) ,
             onPressed: (){
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => welcome(),
-                ),
-              );
-            },
+                ),);},
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -118,10 +104,8 @@ class about extends StatelessWidget {
               ],
             ),
           ),
-
         ],
       ),
     );
-
   }
 }

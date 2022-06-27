@@ -13,18 +13,14 @@ class test2 extends StatelessWidget {
     required this.value2,
     required this.value3,
     required this.value4,
-    required this.value5,
-  });
+    required this.value5,});
   result (value1,value2,value3,value4,value5){
     if (value1>3.92 && value1<5.13 && value2>11.6 && value2<15 && value3>35.5 && value3<44.9 && value4>3.4 && value4 <9.6&& value5>157 && value5<371){
       res='normal';
-      return(res);
-    }
+      return(res);}
     else {
       res="unnormal \nplease visit your doctor";
-      return(res);
-    }
-  }
+      return(res);}}
   @override
   Widget build(BuildContext context) {
     return Scaffold(

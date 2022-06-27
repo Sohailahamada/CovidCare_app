@@ -1,31 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:toggle_switch/toggle_switch.dart';
-import 'package:flutter/material.dart';
-import 'package:adobe_xd/pinned.dart';
 import 'homepage.dart';
 class  form extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body:
-      Padding(
-        padding: const EdgeInsets.symmetric(horizontal:8.0,vertical: 40),
+    return Scaffold(body: Padding(padding: const EdgeInsets.symmetric(horizontal:8.0,vertical: 40),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
-          children:[
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset(
+          children:[Row(mainAxisAlignment: MainAxisAlignment.center,
+              children: [Image.asset(
                   'assets/images/form.png',
                   width: 150,
                   height: 150,
                   fit: BoxFit.cover,
-                ),
-              ],
-            ),
+                ),],),
             Text(
               'Your Medical History',
               style: TextStyle(
@@ -35,39 +23,19 @@ class  form extends StatelessWidget {
               ),
               softWrap: false,
             ),
-
             SizedBox(height: 30,),
-            Row(
-              children: [
-                Container(
-                  width: 200,
-                  height: 40,
-                  decoration: BoxDecoration(
-                    color: const Color(0x29000000),
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                  ),
-                  //borderRadius: BorderRadius.circular(20.0),
-                  child: Text(' Do you suffer from a high\n temperature?',),
-                ),
+            Row(children: [Container(
+                  width: 200, height: 40,
+                  decoration: BoxDecoration(color: const Color(0x29000000),
+                    borderRadius: BorderRadius.all(Radius.circular(10)),),
+                  child: Text(' Do you suffer from a high\n temperature?',),),
                 SizedBox(width: 11,),
                 ToggleSwitch(
                   inactiveBgColor: const Color(0x29000000),
-                  minHeight: 40,
-                  minWidth: 60,
-                  initialLabelIndex: 0,
-                  totalSwitches: 2,
-                  labels: [
-                    'Yes',
-                    'No',
-                  ],
-                  onToggle: (index) {
-                    print('switched to: $index');
-                  },
-                ),
-
-              ],
-            ),
-
+                  minHeight: 40, minWidth: 60,
+                  initialLabelIndex: 0, totalSwitches: 2,
+                  labels: ['Yes', 'No',],
+                  onToggle: (index) {print('switched to: $index');},),],),
             SizedBox(height: 30,),
             Row(
               children: [
@@ -98,7 +66,6 @@ class  form extends StatelessWidget {
                 ),
               ],
             ),
-
             SizedBox(height: 30,),
             Row(
               children: [
@@ -129,7 +96,6 @@ class  form extends StatelessWidget {
                 ),
               ],
             ),
-
             SizedBox(height: 30,),
             Row(
               children: [
@@ -160,7 +126,6 @@ class  form extends StatelessWidget {
                 ),
               ],
             ),
-
             SizedBox(height: 30,),
             Row(
               children: [
@@ -191,7 +156,6 @@ class  form extends StatelessWidget {
                 ),
               ],
             ),
-
             SizedBox(height: 70,),
             Container(
               alignment:Alignment.center ,
